@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaFxDrawing:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFxDrawing_jar</output-path>
+    <root id="archive" name="JavaFxDrawing.jar">
+      <element id="module-output" name="JavaFxDrawing" />
+    </root>
+  </artifact>
+</component>
