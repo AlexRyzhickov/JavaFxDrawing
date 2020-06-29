@@ -139,9 +139,9 @@ public class Main11 extends Application {
 
                         ArrayList<Line> deleteLines = new ArrayList<>();
                         for (Line line : listLines) {
-                            if (Math.abs(line.getStartX() - ellipse.getCenterX()) < 15 && Math.abs(line.getStartY() - ellipse.getCenterY()) < 15) {
+                            if (line.getStartX() == ellipse.getCenterX()  && line.getStartY() == ellipse.getCenterY()) {
                                 deleteLines.add(line);
-                            } else if (Math.abs(line.getEndX() - ellipse.getCenterX()) < 15 && Math.abs(line.getEndY() - ellipse.getCenterY()) < 15) {
+                            } else if (line.getEndX() == ellipse.getCenterX() && line.getEndY() == ellipse.getCenterY()) {
                                 deleteLines.add(line);
                             }
                         }
@@ -175,9 +175,9 @@ public class Main11 extends Application {
                             dragEllipse = ellipse;
                             isDragState = true;
                             for (Line line : listLines) {
-                                if (Math.abs(line.getStartX() - ellipse.getCenterX()) < 15 && Math.abs(line.getStartY() - ellipse.getCenterY()) < 15) {
+                                if (line.getStartX() == ellipse.getCenterX() && line.getStartY() == ellipse.getCenterY() ) {
                                     linesStartPoint.add(line);
-                                } else if (Math.abs(line.getEndX() - ellipse.getCenterX()) < 15 && Math.abs(line.getEndY() - ellipse.getCenterY()) < 15) {
+                                } else if (line.getEndX() == ellipse.getCenterX() && line.getEndY() == ellipse.getCenterY()) {
                                     linesEndPoint.add(line);
                                 }
                             }
@@ -220,6 +220,10 @@ public class Main11 extends Application {
                             double centerY = ellipse.getCenterY();
 
                             updateLineEndPoint(centerX, centerY, currentLine);
+                            currentLine = null;
+                            isChouseNodeFirstForAddLines = false;
+                        }else {
+                            group_for_shapes.getChildren().remove(currentLine);
                             currentLine = null;
                             isChouseNodeFirstForAddLines = false;
                         }
